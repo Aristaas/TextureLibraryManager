@@ -33,7 +33,7 @@ int main()
 				if (x == y) //if both filenames are equal, loops through the library list until the end
 				{
 					fileExists = true;
-					break; //doesn't need to keep chaking if file was found
+					break; //doesn't need to keep cheking if file was found
 				}
 				else
 				{
@@ -43,9 +43,9 @@ int main()
 
 			if (!fileExists)
 			{
-				std::string stringFromPath = dirList1[i].filename().u8string();//creates a string from the project path
-				MfgFromString fn(stringFromPath);
+				MfgFromString fn(dirList1[i]);
 				std::string dirMfg = fn.ReMfg();
+				//std::cout << dirMfg << std::endl;
 
 				std::string stringDromPathLib = g_dirLib.u8string();//create a string from the library path
 				fs::path p1 = stringDromPathLib + "/" + dirMfg;//p1 is string that contains the new mfg folder name

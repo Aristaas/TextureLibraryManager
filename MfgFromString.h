@@ -8,10 +8,11 @@ namespace fs = std::filesystem;
 class MfgFromString
 {
 public:
-	MfgFromString(std::string projFilename);
+	MfgFromString(fs::path projFilename);
 	std::string ReMfg();
+	std::string stringFromPath;
 
 private:
-	std::string a_fName;
+	fs::path a_fName;
 	std::string a_retManufacturer;
 };

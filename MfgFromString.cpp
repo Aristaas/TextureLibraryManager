@@ -7,15 +7,16 @@
 
 namespace fs = std::filesystem;
 
-MfgFromString::MfgFromString(std::string projFilename)
+MfgFromString::MfgFromString(fs::path projFilename)
 	:a_fName(projFilename)// I would rather have the conversion from path to file inside the class
 {
 }
 
 std::string MfgFromString::ReMfg()
 {
-	int pos = a_fName.find_first_of(" _-");
+	stringFromPath = a_fName.filename().u8string();
+	int pos = stringFromPath.find_first_of(" _-");
 	
-	a_retManufacturer = a_fName.substr (0, pos);
+	a_retManufacturer = stringFromPath.substr (0, pos);
 	return a_retManufacturer;
 }

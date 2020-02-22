@@ -15,11 +15,19 @@ FileList::FileList(fs::path a)
 
 std::vector<fs::path> FileList::List()
 {
+	//if file contains .tiff
+	//if (dirList.path().filename().extension() == ".tiff")
+	//{
+
+	//}
 	if (fs::exists(a_pathToSearch)) //if inputed path exists
 	{
 		for (const auto& dirList : fs::recursive_directory_iterator(a_pathToSearch))//iterates through files and...
 		{
-			a_file.emplace_back(dirList.path());//puts files into vector	
+			if (dirList.path().filename().extension() == ".tif")
+			{
+				a_file.emplace_back(dirList.path());//puts files into vector
+			}
 		}
 	}
 	else
