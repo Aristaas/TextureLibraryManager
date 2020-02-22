@@ -13,11 +13,11 @@ class FileList
 public:
 	FileList(fs::path a);
 	std::vector<fs::path> List();
-	std::vector<fs::path> file;
 	~FileList();
 
 private:
-	fs::path pathToSearch;
+	fs::path a_pathToSearch;
+	std::vector<fs::path> a_file;
 };
 
 #endif // !1

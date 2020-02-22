@@ -1,6 +1,4 @@
 #pragma once
-//#ifndef READFILE_H
-//#define READFILE_H
 
 #include <filesystem>
 #include <string>
@@ -12,12 +10,8 @@ class MfgFromString
 public:
 	MfgFromString(std::string projFilename);
 	std::string ReMfg();
-	std::string rettest;
 
 private:
-	std::string fName;
-	//const std::string symbols = " _-";
+	std::string a_fName;
+	std::string a_retManufacturer;
 };
-
-//#endif // !1
-

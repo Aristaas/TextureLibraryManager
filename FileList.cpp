@@ -9,31 +9,27 @@ namespace fs = std::filesystem;
 
 //this class iteritively searches a folder and all its directories and pushes it into a vector
 FileList::FileList(fs::path a)
-	: pathToSearch(a)
+	: a_pathToSearch(a)
 {
-
 }
 
 std::vector<fs::path> FileList::List()
 {
-	if (fs::exists(pathToSearch))
+	if (fs::exists(a_pathToSearch)) //if inputed path exists
 	{
-		//std::cout << "path: " << pathToSearch << std::endl;
-		for (const auto& dirList : fs::recursive_directory_iterator(pathToSearch))//iterates through files and...
+		for (const auto& dirList : fs::recursive_directory_iterator(a_pathToSearch))//iterates through files and...
 		{
-			file.emplace_back(dirList.path());//puts files into vector
-			
+			a_file.emplace_back(dirList.path());//puts files into vector	
 		}
 	}
 	else
 	{
-		file.clear();
+		a_file.clear();//clears vector, vector becomes file[0]
 	}
-	return file;
+	return a_file;
 }
 
-//deconstructor
+//deconstructor, I don't even know it I need this!
 FileList::~FileList()
 {
-
 }
