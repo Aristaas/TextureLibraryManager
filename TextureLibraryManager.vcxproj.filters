@@ -18,9 +18,6 @@
     <ClCompile Include="TextureLibraryManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReadFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FileList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -35,9 +32,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ReadFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FileList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
